@@ -147,7 +147,7 @@ TextureImporter:
       213: -7129699226140105343
     second: demon__die_left_3
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -168,6 +168,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -206,6 +207,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -257,6 +259,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -1288,6 +1302,55 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      demon__die_left_0: 8286708223149598816
+      demon__die_left_1: -1334059553628850578
+      demon__die_left_2: 3581560119077975495
+      demon__die_left_3: -7129699226140105343
+      demon__die_right_0: -3620759483368965987
+      demon__die_right_1: 3232351284627861391
+      demon__die_right_2: 5388214735178324808
+      demon__die_right_3: 6359681104675147830
+      demon__hurt_left_0: -3898053947380765614
+      demon__hurt_left_1: 8361278512507836854
+      demon__hurt_left_2: 7904552540155662908
+      demon__hurt_left_3: 7186315684710161416
+      demon__hurt_right_0: 2500153431871455955
+      demon__hurt_right_1: -7855442494261584718
+      demon__hurt_right_2: 1139744311193698474
+      demon__hurt_right_3: 7866499983109136568
+      demon_idle_left_0: -3073458822499828074
+      demon_idle_left_1: 7521782184601749043
+      demon_idle_left_2: -1658818431393528824
+      demon_idle_left_3: -2147298034204671509
+      demon_idle_right_0: -2949734772146081381
+      demon_idle_right_1: -4487573290498758945
+      demon_idle_right_2: 5272162882092763126
+      demon_idle_right_3: -9155529997385287157
+      demon_run_left_0: -2631680802425174045
+      demon_run_left_1: 5074289628018368322
+      demon_run_left_2: -7358110999727742373
+      demon_run_left_3: -7899029253611769068
+      demon_run_right_0: 2131293799751919942
+      demon_run_right_1: -4112493910250199515
+      demon_run_right_2: 9167139421618821742
+      demon_run_right_3: -1883466392605221271
+      demon_turn_left_0: 6803784554416209207
+      demon_turn_left_1: 4395340334284222138
+      demon_turn_left_2: -2095194881930782588
+      demon_turn_left_3: -6768252059898444256
+      demon_turn_right_0: 9090999660695537975
+      demon_turn_right_1: -6244124124313127662
+      demon_turn_right_2: -564213469788772704
+      demon_turn_right_3: 3979608667108730344
+      demon_walk_left_0: 4867575801980939788
+      demon_walk_left_1: 1784015576806999944
+      demon_walk_left_2: -3842046579055818828
+      demon_walk_left_3: 5122769137637385546
+      demon_walk_right_0: 3163386790231575427
+      demon_walk_right_1: 428878525937619436
+      demon_walk_right_2: 7105194168835080828
+      demon_walk_right_3: -1967542118999924813
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

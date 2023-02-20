@@ -81,7 +81,7 @@ TextureImporter:
       213: -8835604108257227516
     second: MMX6_AA_XZSaber_25
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -102,6 +102,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -140,6 +141,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -191,6 +193,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -760,6 +774,33 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      MMX6_AA_XZSaber_0: 1260580011907900716
+      MMX6_AA_XZSaber_1: 784364920978430175
+      MMX6_AA_XZSaber_10: 1809274109399834062
+      MMX6_AA_XZSaber_11: 1792892559021708299
+      MMX6_AA_XZSaber_12: 4716501325121788506
+      MMX6_AA_XZSaber_13: 8516941420644158735
+      MMX6_AA_XZSaber_14: 6044541575447445108
+      MMX6_AA_XZSaber_15: -5986704677811812905
+      MMX6_AA_XZSaber_16: -1378991618112752714
+      MMX6_AA_XZSaber_17: 1218626274256691109
+      MMX6_AA_XZSaber_18: -2772258078511839594
+      MMX6_AA_XZSaber_19: 5049137149656264883
+      MMX6_AA_XZSaber_2: -4200333587361009076
+      MMX6_AA_XZSaber_20: -2414602075023899642
+      MMX6_AA_XZSaber_21: 7055640272835931913
+      MMX6_AA_XZSaber_22: 3569374874567100021
+      MMX6_AA_XZSaber_23: 6094901250553893294
+      MMX6_AA_XZSaber_24: 2283852713004285545
+      MMX6_AA_XZSaber_25: -8835604108257227516
+      MMX6_AA_XZSaber_3: 1101856411708809060
+      MMX6_AA_XZSaber_4: -8565509377377081285
+      MMX6_AA_XZSaber_5: 3472749324073040240
+      MMX6_AA_XZSaber_6: 6547357355314050283
+      MMX6_AA_XZSaber_7: 913490307145743170
+      MMX6_AA_XZSaber_8: -941040923933934262
+      MMX6_AA_XZSaber_9: -4976208376160183874
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

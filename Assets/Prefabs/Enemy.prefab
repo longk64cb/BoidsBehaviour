@@ -272,7 +272,7 @@ MonoBehaviour:
   aiData: {fileID: 1807448848715743018}
   detectionDelay: 0.05
   aiUpdateDelay: 0.06
-  attackDelay: 4
+  attackDelay: 2
   attackTimeStamp: 0
   isAttacking: 0
   biasFactor: 0.1

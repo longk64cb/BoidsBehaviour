@@ -291,7 +291,7 @@ TextureImporter:
       213: -1428133158025051161
     second: Single wall
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -312,6 +312,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -350,6 +351,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -401,6 +403,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -2440,6 +2454,103 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Single wall: -1428133158025051161
+      forestDecoration_1_0: -768410314809612366
+      forestDecoration_1_1: -661524886906234863
+      forestDecoration_1_10: -5004780095043735260
+      forestDecoration_1_11: -3722843446452574409
+      forestDecoration_1_12: 6434630452012726201
+      forestDecoration_1_13: -7562788072013282868
+      forestDecoration_1_14: 1569572859199869122
+      forestDecoration_1_15: 3514770533881113295
+      forestDecoration_1_16: -1037698950291570690
+      forestDecoration_1_17: -2258571390854788707
+      forestDecoration_1_18: -8033030584873733703
+      forestDecoration_1_19: -1822537894649970583
+      forestDecoration_1_2: -2104779133377511273
+      forestDecoration_1_20: 3869020391364063146
+      forestDecoration_1_21: -1323860774212170190
+      forestDecoration_1_22: 9139781174746987588
+      forestDecoration_1_23: 5146962539086388367
+      forestDecoration_1_24: -6421175841692657627
+      forestDecoration_1_25: 6732294294399098271
+      forestDecoration_1_26: -8721740849928531334
+      forestDecoration_1_27: -1221792063910664882
+      forestDecoration_1_28: -5163180335284477797
+      forestDecoration_1_29: -4524063820465095240
+      forestDecoration_1_3: -3347911807465679678
+      forestDecoration_1_30: -385388858568046352
+      forestDecoration_1_31: 3203373911478074833
+      forestDecoration_1_32: -6202679206359721419
+      forestDecoration_1_33: 6612304012067669835
+      forestDecoration_1_34: 5019792970894380200
+      forestDecoration_1_35: 3989375794402597469
+      forestDecoration_1_36: -1069800850890329964
+      forestDecoration_1_37: -2276802568475882480
+      forestDecoration_1_38: 8038070288304353988
+      forestDecoration_1_39: -6817714481596371537
+      forestDecoration_1_4: -8900717442407053223
+      forestDecoration_1_40: -9080217000776196756
+      forestDecoration_1_41: 5159456675768815181
+      forestDecoration_1_42: 2395373549110128939
+      forestDecoration_1_43: -5137735798278681321
+      forestDecoration_1_44: -5944795087336005769
+      forestDecoration_1_45: 1790705671707359757
+      forestDecoration_1_46: -6063951380462426891
+      forestDecoration_1_47: 2270053476945044863
+      forestDecoration_1_48: -4296936848714141922
+      forestDecoration_1_49: -1664869796079238294
+      forestDecoration_1_5: 6783559232263366847
+      forestDecoration_1_50: 4381560535547808050
+      forestDecoration_1_51: 2413588936544507303
+      forestDecoration_1_52: -8313805619996438234
+      forestDecoration_1_53: -5318934044646357179
+      forestDecoration_1_54: -5332293927499498435
+      forestDecoration_1_55: 8484054214054644656
+      forestDecoration_1_56: 3839163633374877345
+      forestDecoration_1_57: -4095518956638556896
+      forestDecoration_1_58: 6577598587265461453
+      forestDecoration_1_59: -5921628124669006946
+      forestDecoration_1_6: 1450855211366855758
+      forestDecoration_1_60: -7732275419956324413
+      forestDecoration_1_61: 2224673637845600875
+      forestDecoration_1_62: 3601206644166856257
+      forestDecoration_1_63: 2534580546250039754
+      forestDecoration_1_64: 6777320513541483017
+      forestDecoration_1_65: 1004102152761414462
+      forestDecoration_1_66: 5391616655664169965
+      forestDecoration_1_67: -8931443108641981701
+      forestDecoration_1_68: -4877557094963693908
+      forestDecoration_1_69: 341118511416657755
+      forestDecoration_1_7: 6959712633074138310
+      forestDecoration_1_70: 2416091208597769594
+      forestDecoration_1_71: 5623636287380887892
+      forestDecoration_1_72: -1379343551636441778
+      forestDecoration_1_73: 7316490872356551912
+      forestDecoration_1_74: 2714574411082405070
+      forestDecoration_1_75: -5292668701260974686
+      forestDecoration_1_76: -8013138071077937246
+      forestDecoration_1_77: 3370450093251653162
+      forestDecoration_1_78: 905211732299289505
+      forestDecoration_1_79: 1430222232281354243
+      forestDecoration_1_8: 5534641536230735894
+      forestDecoration_1_80: -8933951245512137281
+      forestDecoration_1_81: 2290572348285188323
+      forestDecoration_1_82: -3392593868410160762
+      forestDecoration_1_83: -8926594644237186448
+      forestDecoration_1_84: 3587630878212919165
+      forestDecoration_1_85: -3079215562275768101
+      forestDecoration_1_86: -2023883101066229401
+      forestDecoration_1_87: 5079525578595532181
+      forestDecoration_1_88: 7619090412818711633
+      forestDecoration_1_89: -1890520021695520363
+      forestDecoration_1_9: -8023505419247809674
+      forestDecoration_1_90: -2783750489773289790
+      forestDecoration_1_91: -474805452734310593
+      forestDecoration_1_92: -1772585749301325377
+      forestDecoration_1_93: 7599319788895140612
+      forestDecoration_1_94: 5398621673530377364
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

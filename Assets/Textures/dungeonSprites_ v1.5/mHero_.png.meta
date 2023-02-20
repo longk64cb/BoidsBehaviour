@@ -147,7 +147,7 @@ TextureImporter:
       213: -7381209652594882809
     second: mHero__47
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -168,6 +168,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -206,6 +207,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -257,6 +259,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -1288,6 +1302,55 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      mHero__12: -3778346473866689813
+      mHero__13: 3368444136012402061
+      mHero__14: -1844244058455500999
+      mHero__15: 6277322437370753417
+      mHero__20: 9050007605860217415
+      mHero__21: -781220174183491430
+      mHero__22: -5526574096101752512
+      mHero__23: 7879875842070854373
+      mHero__28: -7223555888122640416
+      mHero__29: 5022172043651123758
+      mHero__30: -7167771345140448482
+      mHero__31: 5012419808119992414
+      mHero__36: -8023691577191073666
+      mHero__37: 5057434905098841793
+      mHero__38: 3699567048552162004
+      mHero__39: 7182727401925215837
+      mHero__4: 8614280268966819217
+      mHero__44: 5190750229175669961
+      mHero__45: 5115485953359500625
+      mHero__46: -7947944944082951070
+      mHero__47: -7381209652594882809
+      mHero__5: -7718701030846022551
+      mHero__6: -534323551563906323
+      mHero__7: 6180114354802228969
+      mHero__die_0: 1028823947440888643
+      mHero__die_1: 2456812523227430946
+      mHero__die_2: -18275006347963391
+      mHero__die_3: 7309741959653476008
+      mHero__hurt_0: -8190635874695837495
+      mHero__hurt_1: 8815679394503984559
+      mHero__hurt_2: 4403449394285051019
+      mHero__hurt_3: -7306886260939094052
+      mHero__idle_0: 5945562029892714144
+      mHero__idle_1: -2815185119634708217
+      mHero__idle_2: 3931182760090029169
+      mHero__idle_3: -1902340450745826929
+      mHero__run_0: -8111581181977605860
+      mHero__run_1: -3763644133570333304
+      mHero__run_2: 6325756944060765732
+      mHero__run_3: -4162592223194154995
+      mHero__turn_0: 2888217261442862745
+      mHero__turn_1: 3202281754241013164
+      mHero__turn_2: -1318720571828672613
+      mHero__turn_3: 4063311953520583834
+      mHero__walk_0: 8198237943932915183
+      mHero__walk_1: -7464726915517384663
+      mHero__walk_2: -7579177723054552274
+      mHero__walk_3: 4674070028757396570
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

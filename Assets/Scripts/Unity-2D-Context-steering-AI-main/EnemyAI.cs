@@ -64,6 +64,8 @@ public class EnemyAI : MonoBehaviour
     private void Awake()
     {
         rgBody = GetComponent<Rigidbody2D>();
+
+        attackTimeStamp = Random.Range(0f, attackDelay);
     }
 
     private void Start()
@@ -76,7 +78,7 @@ public class EnemyAI : MonoBehaviour
         weights = new AIContext(Directions.GetDirectionCount);
 
         //Detecting Player and Obstacles around
-        InvokeRepeating("PerformDetection", 0, detectionDelay);
+        //InvokeRepeating("PerformDetection", 0, detectionDelay);
     }
 
     private void PerformDetection()
@@ -89,16 +91,17 @@ public class EnemyAI : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (canMove) PerformDetection();
         //Enemy AI movement based on Target availability
         if (aiData.currentTarget != null)
         {
             //Looking at the Target
             OnPointerInput?.Invoke(aiData.currentTarget != null ? (Vector2) aiData.currentTarget.position : (Vector2) transform.position + movementInput);
-            if (!following && !isAttacking)
+            if (canMove && !isAttacking)
             {
                 following = true;
-                StartCoroutine(ChaseAndAttack());
-                //ChaseAndAttackFunc();
+                //StartCoroutine(ChaseAndAttack());
+                ChaseAndAttackFunc();
             }
         }
         else if (aiData.GetTargetsCount() > 0)
@@ -167,6 +170,60 @@ public class EnemyAI : MonoBehaviour
 
     }
 
+    private void ChaseAndAttackFunc()
+    {
+        if (aiData.currentTarget == null)
+        {
+            //Stopping Logic
+            Debug.Log("Stopping");
+            movementInput = Vector2.zero;
+            following = false;
+            return;
+        }
+        else
+        {
+            if (aiData.targets != null && aiData.targets.Count > 0)
+            {
+                aiData.currentTarget = aiData.targets[0];
+                lastTargetPosition = aiData.currentTarget.position;
+                float distance = Vector2.SqrMagnitude(lastTargetPosition - transform.position);
+                if (attackTimeStamp >= attackDelay && !isAttacking && distance <= strafeDistance * strafeDistance && canAttack)
+                {
+                    attackTimeStamp = 0f;
+                    isAttacking = true;
+                    StartCoroutine(Attack(aiData.currentTarget));
+                    //yield break;
+                }
+                else
+                {
+                    /*if (distance < strafeDistance)*/
+                    attackTimeStamp += (Time.deltaTime);
+                    //else attackTimeStamp = attackDelay;
+                    movementInput = GetChaseVelocity(aiData.currentTarget.position, strafeDistance, attackDeadZone);
+                }
+                return;
+            }
+            else
+            {
+                isAttacking = false;
+                attackTimeStamp = attackDelay;
+
+                float distane = Vector3.Distance(lastTargetPosition, transform.position);
+                if (distane <= lastTargetPositionThreshhold)
+                {
+                    aiData.currentTarget = null;
+                    movementInput = Vector2.zero;
+                    following = false;
+                    return;
+                }
+                movementInput = GetLastTargetPositionVelocity(lastTargetPosition);
+                return;
+            }
+
+        }
+
+    }
+
     private IEnumerator Attack(Transform target)
     {
         OnPrepareAttack?.Invoke();
@@ -207,7 +264,7 @@ public class EnemyAI : MonoBehaviour
         var distance = displacement.magnitude;
 
         seekContext = seek ? GetDirectionContext(displacement, seekContext) : new AIContext(Directions.GetDirectionCount);
-        strafeContext = strafe ? GetStrafeContext(displacement) : new AIContext(Directions.GetDirectionCount);
+        strafeContext = strafe ? GetStrafeContext(displacement, seekDistance) : new AIContext(Directions.GetDirectionCount);
         biasContext = bias ? GetDirectionContext(rgBody.velocity, biasContext) : new AIContext(Directions.GetDirectionCount);
         collisionContext = collision ? GetCollisionContext() : new AIContext(Directions.GetDirectionCount);
         separationContext = separation ? GetSeparationContext() : new AIContext(Directions.GetDirectionCount);
@@ -277,13 +334,14 @@ public class EnemyAI : MonoBehaviour
         return separationContext;
     }
 
-    private AIContext GetStrafeContext(Vector2 displacement)
+    private AIContext GetStrafeContext(Vector2 displacement, float deadzoneDistance)
     {
         for (int i = 0; i < strafeContext.Size; i++)
         {
             //float value = Vector2.Dot(displacement, Directions.detectDirections[i]);
             float value = Mathf.Cos(Mathf.Deg2Rad * Vector2.Angle(displacement, Directions.detectDirections[i]));
-            float weight = 1f - Mathf.Abs(value + 0.5f);
+            float distance = displacement.magnitude;
+            float weight = 1f - Mathf.Abs(value + (deadzoneDistance - distance) / deadzoneDistance);
             strafeContext.SetWeight(i, weight);
         }
         return strafeContext;

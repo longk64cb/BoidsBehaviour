@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Newtonsoft.Json;
+//using Newtonsoft.Json;
 using SimpleJSON;
 using UnityEngine;
 
@@ -26,8 +26,8 @@ public static class SaveHelper
 
     public static void Save<TKey, TValue>(Dictionary<TKey, TValue> obj, string fileName)
     {
-        string json = JsonConvert.SerializeObject(obj);
-        PlayerPrefs.SetString(fileName, json);
+        //string json = JsonConvert.SerializeObject(obj);
+        //PlayerPrefs.SetString(fileName, json);
     }
     
     public static void Save<T>(T[] obj, string fileName)
@@ -82,11 +82,11 @@ public static class SaveHelper
         return JsonHelper.FromJson<T>(jsonP).ToList();
     }
 
-    public static T Load<T>(string fileName)
-    {
-        string jsonP = PlayerPrefs.GetString(fileName);
-        return JsonConvert.DeserializeObject<T>(jsonP);
-    }
+    //public static T Load<T>(string fileName)
+    //{
+    //    string jsonP = PlayerPrefs.GetString(fileName);
+    //    return JsonConvert.DeserializeObject<T>(jsonP);
+    //}
 
     // public static void LoadDict<T>(ref T obj, string fileName, bool savePref = false)
     // {
