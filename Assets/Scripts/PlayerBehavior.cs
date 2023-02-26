@@ -25,4 +25,10 @@ public class PlayerBehavior : CharacterBehavior
     {
         base.Move(velocity, isRunning);
     }
+
+    public override void Injured(CharacterBehavior character)
+    {
+        base.Injured(character);
+        EventDispatcher.Instance.PostEvent(EventID.OnUpdateHealth);
+    }
 }

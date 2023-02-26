@@ -221,7 +221,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 24
+  spritePixelsToUnits: 12
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -675,12 +675,12 @@ TextureImporter:
       name: forestDecoration_0_20
       rect:
         serializedVersion: 2
-        x: 19
-        y: 100
-        width: 10
-        height: 21
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 16
+        y: 99
+        width: 16
+        height: 22
+      alignment: 9
+      pivot: {x: 0.50340736, y: 0.17953943}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
@@ -700,12 +700,12 @@ TextureImporter:
       name: forestDecoration_0_21
       rect:
         serializedVersion: 2
-        x: 34
+        x: 32
         y: 99
-        width: 12
+        width: 16
         height: 25
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.17076263}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
@@ -725,12 +725,12 @@ TextureImporter:
       name: forestDecoration_0_22
       rect:
         serializedVersion: 2
-        x: 82
+        x: 80
         y: 99
-        width: 12
+        width: 16
         height: 21
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.49754095, y: 0.19458553}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
@@ -829,8 +829,8 @@ TextureImporter:
         y: 69
         width: 22
         height: 25
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.4870987, y: 0.22752777}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
@@ -879,8 +879,8 @@ TextureImporter:
         y: 50
         width: 14
         height: 21
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.4797268, y: 0.35132945}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -996,8 +996,8 @@ TextureImporter:
         y: 18
         width: 26
         height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.4890835, y: 0.34626117}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class GameManager : Singleton<GameManager>
 {
+    [SerializeField] PlayerBehavior player;
+    public PlayerBehavior Player => player;
+
     public int numbersOfDetectVectors = 12;
     public Camera mainCamera;
 

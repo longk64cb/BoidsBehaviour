@@ -19,6 +19,19 @@ public class EnemyBehaviour : CharacterBehavior
         AI.canMove = false;
         //AI.enabled = false;
         base.Die();
+        StartCoroutine(DropItemAndDisappear());
+    }
+
+    private IEnumerator DropItemAndDisappear()
+    {
+        yield return new WaitForSeconds(1f);
+        DropItem();
+        Destroy(gameObject);
+    }
+
+    private void DropItem()
+    {
+
     }
 
     public void BeginAttack()

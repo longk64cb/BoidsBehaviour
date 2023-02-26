@@ -10,6 +10,8 @@ public class CharacterBehavior : MonoBehaviour
     [SerializeField] private float maxHealth = 5f;
     [SerializeField] private float damage = 1f;
     public float Damage => damage;
+    public float Health => health;
+    public float MaxHealth => maxHealth;
 
     [SerializeField] private float attackForce = 5f;
     public float AttackForce => attackForce;
@@ -32,9 +34,12 @@ public class CharacterBehavior : MonoBehaviour
     [SerializeField] private Material flashMaterial;
     private bool isInjured = false;
 
+    private Vector2 orgSpritePos;
 
     protected virtual void Start()
     {
+        orgSpritePos = characterSprite.transform.localPosition;
+
         rgBody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
     }
@@ -89,13 +94,16 @@ public class CharacterBehavior : MonoBehaviour
         isAttacking = false;
     }
 
-    public void Injured(CharacterBehavior character)
+    public virtual void Injured(CharacterBehavior character)
     {
         if (isDead) return;
 
         health -= character.Damage;
 
-        characterSprite.transform.DOShakePosition(0.15f, 0.3f, 1);
+        characterSprite.transform.DOShakePosition(0.15f, 0.3f, 1).OnComplete(() =>
+        {
+            characterSprite.transform.localPosition = orgSpritePos;
+        }) ;
         KnockedBack(transform.position - character.transform.position, character.AttackForce);
 
         if (health > 0f)
