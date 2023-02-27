@@ -6,11 +6,13 @@ using DG.Tweening;
 public class EnemyBehaviour : CharacterBehavior
 {
     private EnemyAI AI;
+    private SpawnCollectable spawnCollectable;
 
     protected override void Start()
     {
         base.Start();
         AI = GetComponent<EnemyAI>();
+        spawnCollectable = GetComponent<SpawnCollectable>();
     }
 
     protected override void Die()
@@ -31,7 +33,7 @@ public class EnemyBehaviour : CharacterBehavior
 
     private void DropItem()
     {
-
+        spawnCollectable.Spawn();
     }
 
     public void BeginAttack()
