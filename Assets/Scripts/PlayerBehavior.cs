@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerBehavior : CharacterBehavior
 {
+    [SerializeField] private int coin = 0;
     // Update is called once per frame
     void Update()
     {
@@ -29,6 +30,30 @@ public class PlayerBehavior : CharacterBehavior
     public override void Injured(CharacterBehavior character)
     {
         base.Injured(character);
+    }
+
+    public override void UpdateHealth(float amount)
+    {
+        base.UpdateHealth(amount);
         EventDispatcher.Instance.PostEvent(EventID.OnUpdateHealth);
+    }
+
+    public void UpdateCoin(int amount)
+    {
+        coin += amount;
+        coin = Mathf.Clamp(coin, 0, coin);
+    }
+
+    public void Collect(Collectable item)
+    {
+        switch (item.Type)
+        {
+            case CollectableType.Heart:
+                UpdateHealth(1f);
+                break;
+            case CollectableType.Coin:
+                UpdateCoin(1);
+                break;
+        }
     }
 }

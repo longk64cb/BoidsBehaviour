@@ -38,6 +38,7 @@ public class HealthBar : MonoBehaviour
     private void UpdateHealthBar(object param = null)
     {
         float health = GameManager.Instance.Player.Health;
+        Debug.Log(health);
         for (int i = 0; i < heartBarList.Count; i++)
         {
             heartBarList[i].gameObject.SetActive(i <= health);

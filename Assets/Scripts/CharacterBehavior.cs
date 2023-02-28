@@ -5,10 +5,10 @@ using DG.Tweening;
 
 public class CharacterBehavior : MonoBehaviour
 {
-    [SerializeField] private float speed = 1f;
-    [SerializeField] private float health = 5f;
-    [SerializeField] private float maxHealth = 5f;
-    [SerializeField] private float damage = 1f;
+    [SerializeField] protected float speed = 1f;
+    [SerializeField] protected float health = 5f;
+    [SerializeField] protected float maxHealth = 5f;
+    [SerializeField] protected float damage = 1f;
     public float Damage => damage;
     public float Health => health;
     public float MaxHealth => maxHealth;
@@ -98,7 +98,7 @@ public class CharacterBehavior : MonoBehaviour
     {
         if (isDead) return;
 
-        health -= character.Damage;
+        UpdateHealth(-character.Damage);
 
         characterSprite.transform.DOShakePosition(0.15f, 0.3f, 1).OnComplete(() =>
         {
@@ -116,6 +116,12 @@ public class CharacterBehavior : MonoBehaviour
             Die();
             //after death
         }
+    }
+
+    public virtual void UpdateHealth(float amount)
+    {
+        health += amount;
+        health = Mathf.Clamp(health, 0f, maxHealth);
     }
 
     protected virtual void Die()

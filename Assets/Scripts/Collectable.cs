@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-public class Collectable : MonoBehaviour
+public class Collectable : PooledObject
 {
     [SerializeField] CollectableType type;
     public CollectableType Type => type;
@@ -11,6 +11,13 @@ public class Collectable : MonoBehaviour
     [SerializeField] SpriteRenderer sprite;
     [SerializeField] float bounceTime = 1f;
     [SerializeField] float speed = 2f;
+
+    private bool isCollected = false;
+
+    private void OnEnable()
+    {
+        isCollected = false;
+    }
 
     [ContextMenu("Spawn")]
     public void Spawn()
@@ -38,5 +45,24 @@ public class Collectable : MonoBehaviour
             }
             yield return null;
         }
+    }
+
+    public void Collected()
+    {
+        isCollected = true;
+        StopCoroutine(Bouncing());
+        StartCoroutine(FlyToPlayer());
+    }
+
+    private IEnumerator FlyToPlayer()
+    {
+        PlayerBehavior player = GameManager.Instance.Player;
+        while (Vector2.SqrMagnitude(player.transform.position - transform.position) > 0.25f)
+        {
+            transform.position = Vector2.Lerp(transform.position, player.transform.position, Time.deltaTime * 8f);
+            yield return null;
+        }
+        player.Collect(this);
+        ReturnToPool();
     }
 }
