@@ -42,10 +42,11 @@ public class HealthBar : MonoBehaviour
         for (int i = 0; i < heartBarList.Count; i++)
         {
             heartBarList[i].gameObject.SetActive(i <= health);
+            heartBarList[i].fillAmount = 1f;
         }
 
         int roundedHealth = (int)Mathf.Floor(health);
         float amount = health - roundedHealth;
-        heartBarList[roundedHealth].fillAmount = amount;
+        if (amount > 0) heartBarList[roundedHealth].fillAmount = amount;
     }
 }
