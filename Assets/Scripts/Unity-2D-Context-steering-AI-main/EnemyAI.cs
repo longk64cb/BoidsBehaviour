@@ -5,6 +5,8 @@ using UnityEngine.Events;
 
 public class EnemyAI : MonoBehaviour
 {
+    [SerializeField] bool canFollowing = true;
+
     [SerializeField]
     private List<Detector> detectors;
 
@@ -110,7 +112,7 @@ public class EnemyAI : MonoBehaviour
             aiData.currentTarget = aiData.targets[0];
         }
         //Moving the Agent
-        if (!canMove)
+        if (!canMove || !canFollowing)
             movementInput = Vector2.zero;
         OnMovementInput?.Invoke(movementInput, following);
     }
