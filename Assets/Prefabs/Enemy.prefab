@@ -268,14 +268,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b87d250478bfdb48b82bf91309af583, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canFollowing: 0
   detectors:
   - {fileID: 1807448848696167681}
   - {fileID: 1807448847582673297}
-  seek: 1
+  seek: 0
   strafe: 1
-  bias: 1
-  separation: 1
-  collision: 1
+  bias: 0
+  separation: 0
+  collision: 0
   lastTargetPositionThreshhold: 0.5
   aiData: {fileID: 1807448848715743018}
   detectionDelay: 0.05
@@ -287,7 +288,7 @@ MonoBehaviour:
   obstacleRadius: 2
   agentColliderSize: 0.6
   neighbourRadius: 1
-  strafeDistance: 2
+  strafeDistance: 3
   attackDeadZone: 0.5
   OnPrepareAttack:
     m_PersistentCalls:
@@ -352,7 +353,8 @@ MonoBehaviour:
   movementInput: {x: 0, y: 0}
   target: {fileID: 0}
   canMove: 1
-  canAttack: 1
+  canAttack: 0
+  canDrawGizmo: 1
 --- !u!114 &1807448848715743018
 MonoBehaviour:
   m_ObjectHideFlags: 0

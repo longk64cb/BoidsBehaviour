@@ -14,7 +14,7 @@ public class PlayerBehavior : CharacterBehavior
         float vert = Input.GetAxisRaw("Vertical");
 
         Move(new Vector2(horz, vert), true);
-        Turn(GameManager.Instance.mainCamera.ScreenToWorldPoint(Input.mousePosition));
+        Turn(Camera.main.ScreenToWorldPoint(Input.mousePosition));
 
         if (Input.GetMouseButtonDown(0))
         {

@@ -113,7 +113,7 @@ public class CharacterBehavior : MonoBehaviour
         }
         else
         {
-            Die();
+            //Die();
             //after death
         }
     }

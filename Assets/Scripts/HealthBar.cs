@@ -27,7 +27,7 @@ public class HealthBar : MonoBehaviour
 
     private void InitHealthBar()
     {
-        float maxHealth = GameManager.Instance.Player.MaxHealth;
+        float maxHealth = /*GameManager.Instance.Player.MaxHealth; */5;
         for (int i = 0; i < maxHealth; i++)
         {
             Image heart = Instantiate(heartPrefab, transform);

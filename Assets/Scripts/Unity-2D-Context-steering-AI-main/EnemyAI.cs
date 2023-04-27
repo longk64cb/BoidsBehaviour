@@ -62,6 +62,7 @@ public class EnemyAI : MonoBehaviour
 
     public bool canMove = true;
     public bool canAttack = true;
+    [SerializeField] private bool canDrawGizmo;
 
     private void Awake()
     {
@@ -81,6 +82,7 @@ public class EnemyAI : MonoBehaviour
 
         //Detecting Player and Obstacles around
         //InvokeRepeating("PerformDetection", 0, detectionDelay);
+        Debug.Log("Start");
     }
 
     private void PerformDetection()
@@ -258,7 +260,7 @@ public class EnemyAI : MonoBehaviour
         return weights.GetDesiredDirection();
     }
 
-    public Vector2 GetChaseVelocity(Vector3 targetPosition, float seekDistance, float seekDeadZone)
+    public Vector2 GetChaseVelocity(Vector3 targetPosition, float strafeDistance, float attackDeadZone)
     {
         Vector2 chaseVelocity = Vector2.zero;
 
@@ -266,15 +268,15 @@ public class EnemyAI : MonoBehaviour
         var distance = displacement.magnitude;
 
         seekContext = seek ? GetDirectionContext(displacement, seekContext) : new AIContext(Directions.GetDirectionCount);
-        strafeContext = strafe ? GetStrafeContext(displacement, seekDistance) : new AIContext(Directions.GetDirectionCount);
+        strafeContext = strafe ? GetStrafeContext(displacement, strafeDistance) : new AIContext(Directions.GetDirectionCount);
         biasContext = bias ? GetDirectionContext(rgBody.velocity, biasContext) : new AIContext(Directions.GetDirectionCount);
         collisionContext = collision ? GetCollisionContext() : new AIContext(Directions.GetDirectionCount);
         separationContext = separation ? GetSeparationContext() : new AIContext(Directions.GetDirectionCount);
 
         seekContext.factor = 1f;
-        if (seekDistance - seekDeadZone != 0f)
+        if (strafeDistance - attackDeadZone != 0f)
         {
-            seekContext.factor = Utilities.MapValue(distance, seekDeadZone, seekDistance);
+            seekContext.factor = Utilities.MapValue(distance, attackDeadZone, strafeDistance);
         }
         strafeContext.factor = 1f - seekContext.factor;
         biasContext.factor = biasFactor;
@@ -330,6 +332,7 @@ public class EnemyAI : MonoBehaviour
             {
                 float value = Mathf.Cos(Mathf.Deg2Rad * Vector2.Angle(awayVector, Directions.detectDirections[i]));
                 float weight = 1f - Mathf.Abs(value - 0.65f);
+                //float weight = value;
                 separationContext.SetWeight(i, weight * maxFactor);
             }
         }
@@ -374,7 +377,7 @@ public class EnemyAI : MonoBehaviour
 
                 float valueToPutIn = result * weight;
 
-                valueToPutIn = -(valueToPutIn * 0.5f + 0.5f);
+                valueToPutIn = -(valueToPutIn/* * 0.5f + 0.5f*/);
 
                 //override value only if it is higher than the current one stored in the danger array
                 if (valueToPutIn < collisionContext.GetWeight(i))
@@ -388,7 +391,7 @@ public class EnemyAI : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        if (!Application.isPlaying) return;
+        if (!Application.isPlaying || !canDrawGizmo) return;
         //Gizmos.color = Color.green;
         for (int i = 0; i < weights.Size; i++)
         {

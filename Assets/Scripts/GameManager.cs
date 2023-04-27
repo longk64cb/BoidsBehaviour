@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -12,12 +13,24 @@ public class GameManager : Singleton<GameManager>
 
     private void Awake()
     {
+        player = FindAnyObjectByType<PlayerBehavior>();
+
         float angle = 360f / numbersOfDetectVectors;
         for (int i = 0; i < numbersOfDetectVectors; i++)
         {
             var rotateVector = Quaternion.AngleAxis(angle * i, Vector3.forward) * Vector2.up;
             //Vector2 vector = Vector2.up * rotateVector * i;
             Directions.detectDirections.Add(rotateVector.normalized);
+        }
+        Debug.Log("Awake GameManager");
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(0);
+            player = FindAnyObjectByType<PlayerBehavior>();
         }
     }
 }
