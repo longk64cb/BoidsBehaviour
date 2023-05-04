@@ -239,7 +239,7 @@ public class EnemyAI : MonoBehaviour
         while ((Vector2.SqrMagnitude(transform.position - target.position) > attackDeadZone) && timeStamp < attackTime)
         {
             movementInput = (target.transform.position - transform.position).normalized;
-            movementInput *= 2.5f;
+            movementInput *= 2f;
             timeStamp += Time.deltaTime;
             yield return null;
         }

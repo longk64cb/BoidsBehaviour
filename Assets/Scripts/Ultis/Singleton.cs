@@ -14,12 +14,13 @@ public class Singleton<T> : MonoBehaviour where T : Singleton<T> {
 
 	public static T Instance {
 		get {
-			//if (applicationIsQuitting) {
-			//	Debug.LogError("applicationIsQuitting");
-			//	return null;
-			//}
+            if (applicationIsQuitting)
+            {
+                Debug.LogError("applicationIsQuitting");
+                return null;
+            }
 
-			lock (_lock) {
+            lock (_lock) {
 				if (_instance == null) {
 					_instance = (T)FindObjectOfType(typeof(T));
 
